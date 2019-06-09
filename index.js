@@ -42,17 +42,18 @@ app.all('*', function (req, res) {
     }
 
     try {
-        var result = mjml2html(req.body || '', opts);
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        res.end(result.html);
+        var mjml = JSON.parse(req.body).mjml
+        var result = mjml2html(mjml || '', opts);
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.end(JSON.stringify({ "errors": [], "html" : result.html, "mjml" : mjml}));
     } catch (ex) {
         // print error details
         console.log(req.body || '')
         console.error(ex);
         console.log('')
 
-        res.writeHead(400, {'Content-Type': 'text/plain'});
-        res.end();
+        res.writeHead(400, {'Content-Type': 'application/json'});	    
+        res.end(JSON.stringify({ "errors": ex.message}));
     }
 });
 

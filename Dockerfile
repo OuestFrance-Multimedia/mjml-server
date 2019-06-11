@@ -24,4 +24,6 @@ HEALTHCHECK --timeout=2s \
 
 EXPOSE 80
 
+
+USER node
 ENTRYPOINT [ "node", "index.js"]

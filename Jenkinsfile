@@ -30,7 +30,7 @@ lock("${env.JOB_NAME}") {
   {
     node(label) {
 
-      def PHP_IMAGE_TAG   = "eu.gcr.io/${PROJECT}/php-api"
+      def IMAGE_TAG   = "of2m/mjml-server"
 
       def VERSION_DOCKER = "develop.${env.BUILD_NUMBER}"
 
@@ -54,7 +54,7 @@ lock("${env.JOB_NAME}") {
 
 
         stage('build') {
-          def customImage = docker.build("of2m/mjml-server")
+          def customImage = docker.build("${IMAGE_TAG}")
           customImage.push('latest')
           customImage.push("${VERSION_DOCKER}")
         }

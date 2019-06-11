@@ -34,7 +34,7 @@ lock("${env.JOB_NAME}") {
 
       def PHP_IMAGE_TAG   = "eu.gcr.io/${PROJECT}/php-api"
 
-      def VERSION_DOCKER = "master.${env.BUILD_NUMBER}"
+      def VERSION_DOCKER = "develop.${env.BUILD_NUMBER}"
 
       try {
 

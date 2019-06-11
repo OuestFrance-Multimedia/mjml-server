@@ -1,5 +1,3 @@
-properties([pipelineTriggers([cron('H 3 * * 1-5')])])
-
 def label = "mjml-${UUID.randomUUID().toString()}"
 
 lock("${env.JOB_NAME}") {

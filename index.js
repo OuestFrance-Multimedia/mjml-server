@@ -57,7 +57,7 @@ app.all('*', function (req, res) {
     }
 });
 
-const server = app.listen(80);
+const server = app.listen(3000);
 
 var signals = {
   'SIGHUP': 1,

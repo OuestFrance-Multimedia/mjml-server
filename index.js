@@ -85,4 +85,5 @@ console.log('mjml keep comments: ' + opts.keepComments);
 console.log('mjml validation level: ' + opts.validationLevel);
 console.log('mjml minify: ' + opts.minify);
 console.log('');
-console.log('POST mjml as text/plain raw body, result will be returned as text/html.');
+console.log('Try to mimic official API (https://mjml.io/api/documentation/)');
+console.log('POST JSON, return JSON');

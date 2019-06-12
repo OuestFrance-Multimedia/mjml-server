@@ -20,6 +20,8 @@ app.use(bodyParser.text({
     type: '*/*'
 }));
 
+app.use(require('morgan')('combined'));
+
 var opts = {
     keepComments: (process.env.MJML_KEEP_COMMENTS === 'true'),
     minify: (process.env.MJML_MINIFY === 'true'),
